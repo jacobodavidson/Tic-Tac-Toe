@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/ich/Desktop/PRGM/Tic-Tac-Toe/Tic-Tac-Toe.csproj": {}
+    "/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/Game.csproj": {}
   },
   "projects": {
-    "/home/ich/Desktop/PRGM/Tic-Tac-Toe/Tic-Tac-Toe.csproj": {
+    "/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/Game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/ich/Desktop/PRGM/Tic-Tac-Toe/Tic-Tac-Toe.csproj",
-        "projectName": "Tic-Tac-Toe",
-        "projectPath": "/home/ich/Desktop/PRGM/Tic-Tac-Toe/Tic-Tac-Toe.csproj",
+        "projectUniqueName": "/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/Game.csproj",
+        "projectName": "Game",
+        "projectPath": "/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/Game.csproj",
         "packagesPath": "/home/ich/.nuget/packages/",
-        "outputPath": "/home/ich/Desktop/PRGM/Tic-Tac-Toe/obj/",
+        "outputPath": "/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/ich/.nuget/NuGet/NuGet.Config"

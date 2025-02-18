@@ -1,0 +1,15 @@
+/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/bin/Debug/net9.0/Game
+/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/bin/Debug/net9.0/Game.deps.json
+/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/bin/Debug/net9.0/Game.runtimeconfig.json
+/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/bin/Debug/net9.0/Game.dll
+/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/bin/Debug/net9.0/Game.pdb
+/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/obj/Debug/net9.0/Game.GeneratedMSBuildEditorConfig.editorconfig
+/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/obj/Debug/net9.0/Game.AssemblyInfoInputs.cache
+/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/obj/Debug/net9.0/Game.AssemblyInfo.cs
+/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/obj/Debug/net9.0/Game.csproj.CoreCompileInputs.cache
+/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/obj/Debug/net9.0/Game.sourcelink.json
+/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/obj/Debug/net9.0/Game.dll
+/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/obj/Debug/net9.0/refint/Game.dll
+/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/obj/Debug/net9.0/Game.pdb
+/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/obj/Debug/net9.0/Game.genruntimeconfig.cache
+/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/obj/Debug/net9.0/ref/Game.dll
