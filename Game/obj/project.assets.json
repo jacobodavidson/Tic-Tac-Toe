@@ -8,19 +8,19 @@
     "net9.0": []
   },
   "packageFolders": {
-    "/Users/jacobodavidson/.nuget/packages/": {}
+    "/home/ich/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/jacobodavidson/Desktop/PRGM/Tic-Tac-Toe/Game/Game.csproj",
+      "projectUniqueName": "/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/Game.csproj",
       "projectName": "Game",
-      "projectPath": "/Users/jacobodavidson/Desktop/PRGM/Tic-Tac-Toe/Game/Game.csproj",
-      "packagesPath": "/Users/jacobodavidson/.nuget/packages/",
-      "outputPath": "/Users/jacobodavidson/Desktop/PRGM/Tic-Tac-Toe/Game/obj/",
+      "projectPath": "/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/Game.csproj",
+      "packagesPath": "/home/ich/.nuget/packages/",
+      "outputPath": "/home/ich/Desktop/PRGM/Tic-Tac-Toe/Game/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/jacobodavidson/.nuget/NuGet/NuGet.Config"
+        "/home/ich/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -65,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
