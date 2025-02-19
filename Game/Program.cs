@@ -1,33 +1,43 @@
-﻿using System;
+﻿// -----------------------------------------------------------------------------
+// Program: Tic-Tac-Toe
+// Author: Jacob Davidson
+// Date: 02-18-2025
+// Description: This program implements a simple console-based Tic-Tac-Toe game
+//              for two players. The game allows players to take turns entering
+//              their moves, checks for win conditions, and handles invalid 
+//              moves. After the game ends, players are prompted to play again
+//              or exit.
+// -----------------------------------------------------------------------------
+using System;
 
 namespace Game
 {
     class Program
     {
       // Set Players
-      private static string playerX = "";
-      private static string playerXSymbol = "X";
-      private static string playerO = "";
-      private static string playerOSymbol = "O";
+      private static string s_playerX = "";
+      private static string s_playerXSymbol = "X";
+      private static string s_playerO = "";
+      private static string s_playerOSymbol = "O";
 
       // Game Loop Variables
-      private static bool gameWon = false;
-      private static string winner = "";
-      private static bool playAgain = true;
+      private static bool s_gameWon = false;
+      private static string s_winner = "";
+      private static bool s_playAgain = true;
 
       // Variables for Move Coordinates
-      private static int row;
-      private static int col;
-      private static bool playerXTurn = true;
+      private static int s_row;
+      private static int s_col;
+      private static bool s_playerXTurn = true;
       
       // Set Board Lines
       // Change element 4, 8, 12 to X or O later
-      private static string boardTop = "    1   2   3"; // Top Labels for Board
-      private static string[] boardLine1 = new string[] {"1", " ", "|", " ",
+      private static string s_boardTop = "    1   2   3"; // Top Labels
+      private static string[] s_boardLine1 = new string[] {"1", " ", "|", " ",
         " ", " ", "|", " ", " ", " ", "|", " ", " ", " ", "|"};
-      private static string[] boardLine2 = new string[] {"2", " ", "|", " ",
+      private static string[] s_boardLine2 = new string[] {"2", " ", "|", " ",
         " ", " ", "|", " ", " ", " ", "|", " ", " ", " ", "|"};
-      private static string[] boardLine3 = new string[] {"3", " ", "|", " ",
+      private static string[] s_boardLine3 = new string[] {"3", " ", "|", " ",
         " ", " ", "|", " ", " ", " ", "|", " ", " ", " ", "|"};
 
       static void Main(string[] args)
@@ -39,10 +49,10 @@ namespace Game
       // Main Game Loop
       static void GameLoop()
       {
-        while (!gameWon)
+        while (!s_gameWon)
         {
           RecordMove();
-          gameWon = CheckWin();
+          s_gameWon = CheckWin();
         }
 
         EndGame();
@@ -56,8 +66,8 @@ namespace Game
         Console.WriteLine();
 
         SetPlayers();
-        Console.WriteLine("[" + playerX + " is X]");
-        Console.WriteLine("[" + playerO + " is O]");
+        Console.WriteLine("[" + s_playerX + " is X]");
+        Console.WriteLine("[" + s_playerO + " is O]");
         Console.WriteLine();
         PrintBoard();
       }
@@ -65,10 +75,10 @@ namespace Game
       // Game Over Dialogue
       static void EndGame()
       {
-        if (winner != "")
+        if (s_winner != "")
         {
           Console.WriteLine("[GAME OVER]");
-          Console.WriteLine("~" + winner + " Wins~");
+          Console.WriteLine("~" + s_winner + " Wins~");
         }
         else
         {
@@ -89,15 +99,15 @@ namespace Game
 
         if (playAgainInput == "Y" || playAgainInput == "y")
         {
-          gameWon = false;
-          playAgain = true;
-          winner = "";
-          playerXTurn = true;
-          boardLine1 = new string[] {"1", " ", "|", " ", " ", " ", "|", " ",
+          s_gameWon = false;
+          s_playAgain = true;
+          s_winner = "";
+          s_playerXTurn = true;
+          s_boardLine1 = new string[] {"1", " ", "|", " ", " ", " ", "|", " ",
             " ", " ", "|", " ", " ", " ", "|"};
-          boardLine2 = new string[] {"2", " ", "|", " ", " ", " ", "|", " ",
+          s_boardLine2 = new string[] {"2", " ", "|", " ", " ", " ", "|", " ",
             " ", " ", "|", " ", " ", " ", "|"};
-          boardLine3 = new string[] {"3", " ", "|", " ", " ", " ", "|", " ",
+          s_boardLine3 = new string[] {"3", " ", "|", " ", " ", " ", "|", " ",
             " ", " ", "|", " ", " ", " ", "|"};
           Console.WriteLine();
           Console.WriteLine("[New Game]");
@@ -107,66 +117,66 @@ namespace Game
         }
         else
         {
-          playAgain = false;
+          s_playAgain = false;
         }
       }
 
       // Checks All Possible Win Conditions and Draws
       static bool CheckWin()
       {
-        if (boardLine1[4] == boardLine1[8] && boardLine1[8] == boardLine1[12]
-          && boardLine1[4] != " ")
+        if (s_boardLine1[4] == s_boardLine1[8]
+          && s_boardLine1[8] == s_boardLine1[12] && s_boardLine1[4] != " ")
         {
-          CheckWinner(boardLine1[4]);
+          CheckWinner(s_boardLine1[4]);
           return true;
         }
-        else if (boardLine2[4] == boardLine2[8]
-          && boardLine2[8] == boardLine2[12] && boardLine2[4] != " ")
+        else if (s_boardLine2[4] == s_boardLine2[8]
+          && s_boardLine2[8] == s_boardLine2[12] && s_boardLine2[4] != " ")
         {
-          CheckWinner(boardLine2[4]);
+          CheckWinner(s_boardLine2[4]);
           return true;
         }
-        else if (boardLine3[4] == boardLine3[8]
-          && boardLine3[8] == boardLine3[12] && boardLine3[4] != " ")
+        else if (s_boardLine3[4] == s_boardLine3[8]
+          && s_boardLine3[8] == s_boardLine3[12] && s_boardLine3[4] != " ")
         {
-          CheckWinner(boardLine3[4]);
+          CheckWinner(s_boardLine3[4]);
           return true;
         }
-        else if (boardLine1[4] == boardLine2[4]
-          && boardLine2[4] == boardLine3[4] && boardLine1[4] != " ")
+        else if (s_boardLine1[4] == s_boardLine2[4]
+          && s_boardLine2[4] == s_boardLine3[4] && s_boardLine1[4] != " ")
         {
-          CheckWinner(boardLine1[4]);
+          CheckWinner(s_boardLine1[4]);
           return true;
         }
-        else if (boardLine1[8] == boardLine2[8]
-          && boardLine2[8] == boardLine3[8] && boardLine1[8] != " ")
+        else if (s_boardLine1[8] == s_boardLine2[8]
+          && s_boardLine2[8] == s_boardLine3[8] && s_boardLine1[8] != " ")
         {
-          CheckWinner(boardLine1[8]);
+          CheckWinner(s_boardLine1[8]);
           return true;
         }
-        else if (boardLine1[12] == boardLine2[12]
-          && boardLine2[12] == boardLine3[12] && boardLine1[12] != " ")
+        else if (s_boardLine1[12] == s_boardLine2[12]
+          && s_boardLine2[12] == s_boardLine3[12] && s_boardLine1[12] != " ")
         {
-          CheckWinner(boardLine1[12]); 
+          CheckWinner(s_boardLine1[12]); 
           return true;
         }
-        else if (boardLine1[4] == boardLine2[8]
-          && boardLine2[8] == boardLine3[12] && boardLine1[4] != " ")
+        else if (s_boardLine1[4] == s_boardLine2[8]
+          && s_boardLine2[8] == s_boardLine3[12] && s_boardLine1[4] != " ")
         {
-          CheckWinner(boardLine1[4]);
+          CheckWinner(s_boardLine1[4]);
           return true;
         }
-        else if (boardLine1[12] == boardLine2[8]
-          && boardLine2[8] == boardLine3[4] && boardLine1[12] != " ")
+        else if (s_boardLine1[12] == s_boardLine2[8]
+          && s_boardLine2[8] == s_boardLine3[4] && s_boardLine1[12] != " ")
         {
-          CheckWinner(boardLine1[12]);
+          CheckWinner(s_boardLine1[12]);
           return true;
         }
-        else if (boardLine1[4] != " " && boardLine1[8] != " " 
-          && boardLine1[12] != " " && boardLine2[4] != " "
-          && boardLine2[8] != " " && boardLine2[12] != " "
-          && boardLine3[4] != " " && boardLine3[8] != " "
-          && boardLine3[12] != " ")
+        else if (s_boardLine1[4] != " " && s_boardLine1[8] != " " 
+          && s_boardLine1[12] != " " && s_boardLine2[4] != " "
+          && s_boardLine2[8] != " " && s_boardLine2[12] != " "
+          && s_boardLine3[4] != " " && s_boardLine3[8] != " "
+          && s_boardLine3[12] != " ")
         {
           return true;
         }
@@ -179,13 +189,13 @@ namespace Game
       // Determines Which Player Won Based on Symbol
       static void CheckWinner(string symbol)
       {
-        if (symbol == playerXSymbol)
+        if (symbol == s_playerXSymbol)
         {
-          winner = playerX;
+          s_winner = s_playerX;
         }
         else
         {
-          winner = playerO;
+          s_winner = s_playerO;
         }
       }
 
@@ -193,10 +203,10 @@ namespace Game
       static void SetPlayers()
       {
         Console.Write("[Enter Player X]: ");
-        playerX = Console.ReadLine();
+        s_playerX = Console.ReadLine();
         
         Console.Write("[Enter Player O]: ");
-        playerO = Console.ReadLine();
+        s_playerO = Console.ReadLine();
         Console.WriteLine();
       }
 
@@ -204,51 +214,51 @@ namespace Game
       // Invalid Move Selections and Toggles Player Turns
       static void RecordMove()
       {
-        if (playerXTurn)
+        if (s_playerXTurn)
         {
-          Console.WriteLine("[" + playerX + "'s Turn]");
+          Console.WriteLine("[" + s_playerX + "'s Turn]");
           Console.Write("[Enter Move Row]: ");
-          row = int.Parse(Console.ReadLine());
+          s_row = int.Parse(Console.ReadLine());
           Console.Write("[Enter Move Column]: ");
-          col = int.Parse(Console.ReadLine());
+          s_col = int.Parse(Console.ReadLine());
           Console.WriteLine();
 
-          if (row == 1)
+          if (s_row == 1)
           {
-            if (boardLine1[col * 4] != " ")
+            if (s_boardLine1[s_col * 4] != " ")
             {
               InvalidMove();
             }
             else
             {
-              boardLine1[col * 4] = playerXSymbol;
-              playerXTurn = !playerXTurn;
+              s_boardLine1[s_col * 4] = s_playerXSymbol;
+              s_playerXTurn = !s_playerXTurn;
               PrintBoard();
             }
           }
-          else if (row == 2)
+          else if (s_row == 2)
           {
-            if (boardLine2[col * 4] != " ")
+            if (s_boardLine2[s_col * 4] != " ")
             {
               InvalidMove();
             }
             else
             {
-              boardLine2[col * 4] = playerXSymbol;
-              playerXTurn = !playerXTurn;
+              s_boardLine2[s_col * 4] = s_playerXSymbol;
+              s_playerXTurn = !s_playerXTurn;
               PrintBoard();
             }
           }
-          else if (row == 3)
+          else if (s_row == 3)
           {
-            if (boardLine3[col * 4] != " ")
+            if (s_boardLine3[s_col * 4] != " ")
             {
               InvalidMove();
             }
             else
             {
-              boardLine3[col * 4] = playerXSymbol;
-              playerXTurn = !playerXTurn;
+              s_boardLine3[s_col * 4] = s_playerXSymbol;
+              s_playerXTurn = !s_playerXTurn;
               PrintBoard();
             }
           }
@@ -259,49 +269,49 @@ namespace Game
         } 
         else
         {
-          Console.WriteLine("[" + playerO + "'s Turn]");
+          Console.WriteLine("[" + s_playerO + "'s Turn]");
           Console.Write("[Enter Move Row]: ");
-          row = int.Parse(Console.ReadLine());
+          s_row = int.Parse(Console.ReadLine());
           Console.Write("[Enter Move Column]: ");
-          col = int.Parse(Console.ReadLine());
+          s_col = int.Parse(Console.ReadLine());
           Console.WriteLine();
 
-          if (row == 1)
+          if (s_row == 1)
           {
-            if (boardLine1[col * 4] != " ")
+            if (s_boardLine1[s_col * 4] != " ")
             {
               InvalidMove();
             }
             else
             {
-              boardLine1[col * 4] = playerOSymbol;
-              playerXTurn = !playerXTurn;
+              s_boardLine1[s_col * 4] = s_playerOSymbol;
+              s_playerXTurn = !s_playerXTurn;
               PrintBoard();
             }
           }
-          else if (row == 2)
+          else if (s_row == 2)
           {
-            if (boardLine2[col * 4] != " ")
+            if (s_boardLine2[s_col * 4] != " ")
             {
               InvalidMove();
             }
             else
             {
-              boardLine2[col * 4] = playerOSymbol;
-              playerXTurn = !playerXTurn;
+              s_boardLine2[s_col * 4] = s_playerOSymbol;
+              s_playerXTurn = !s_playerXTurn;
               PrintBoard();
             }
           }
-          else if (row == 3)
+          else if (s_row == 3)
           {
-            if (boardLine3[col * 4] != " ")
+            if (s_boardLine3[s_col * 4] != " ")
             {
               InvalidMove();
             }
             else
             {
-              boardLine3[col * 4] = playerOSymbol;
-              playerXTurn = !playerXTurn;
+              s_boardLine3[s_col * 4] = s_playerOSymbol;
+              s_playerXTurn = !s_playerXTurn;
               PrintBoard();
             }
           }
@@ -323,10 +333,10 @@ namespace Game
       // Prints the Current Board
       static void PrintBoard()
       {
-        Console.WriteLine(boardTop);
-        Console.WriteLine(string.Join("", boardLine1));
-        Console.WriteLine(string.Join("", boardLine2));
-        Console.WriteLine(string.Join("", boardLine3));
+        Console.WriteLine(s_boardTop);
+        Console.WriteLine(string.Join("", s_boardLine1));
+        Console.WriteLine(string.Join("", s_boardLine2));
+        Console.WriteLine(string.Join("", s_boardLine3));
         Console.WriteLine();
       }
     }
